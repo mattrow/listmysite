@@ -16,7 +16,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <h1 className="text-5xl font-bold mb-6">
-              Boost Your Site's Authority with
+              Boost Your Site&apos;s Authority with
               <span className="text-yellow-400"> 100+ Quality Backlinks</span>
             </h1>
             <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ export default function Home() {
               ))}
             </div>
             <p className="mt-4">
-              "ListMySite.io helped us increase our domain authority by 15 points in just two months. Their manual submission process ensured quality backlinks that made a real difference."
+              &quot;ListMySite.io helped us increase our domain authority by 15 points in just two months. Their manual submission process ensured quality backlinks that made a real difference.&quot;
             </p>
             <p className="mt-2">
               - Alex Chen, Founder @ TechStartup.com
