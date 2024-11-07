@@ -1,100 +1,134 @@
-import Image from "next/image";
+'use client';
+
+import { ArrowRight, Shield, Zap, Star, ClipboardCheck } from 'lucide-react';
+import { Navbar } from './components/Navbar';
+import { FeatureCard } from './components/FeatureCard';
+import { PricingCard } from './components/PricingCard';
+import { DomainAuthorityDemo } from './components/DomainAuthorityDemo';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gray-900 text-gray-100">
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main>
+        {/* Hero */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center">
+            <h1 className="text-5xl font-bold mb-6">
+              Boost Your Site's Authority with
+              <span className="text-yellow-400"> 100+ Quality Backlinks</span>
+            </h1>
+            <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+              Get your website listed on high-authority directories with our manual submission service. Save 30+ hours of work and see results within 7 days.
+            </p>
+            <div className="flex justify-center space-x-4">
+              <button
+                className="bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-300 transition-colors flex items-center"
+              >
+                Start Growing Your Authority <ArrowRight className="ml-2" />
+              </button>
+            </div>
+            <div className="mt-6 text-gray-400">
+              🚀 Launch Discount: Only 3 spots left at $99 (Regular: $159)
+            </div>
+          </div>
+        </div>
+
+        {/* Domain Authority Demo */}
+        <div className="py-20 bg-gray-800/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <DomainAuthorityDemo />
+          </div>
+        </div>
+
+        {/* Features */}
+        <div className="py-20" id="features">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid md:grid-cols-3 gap-8">
+              <FeatureCard
+                Icon={ClipboardCheck}
+                title="Manual Submission"
+                description="Each submission is carefully handled by our team to ensure maximum quality and acceptance rate."
+              />
+              <FeatureCard
+                Icon={Shield}
+                title="Quality Backlinks"
+                description="All directories are manually vetted with high domain authority scores."
+              />
+              <FeatureCard
+                Icon={Zap}
+                title="SEO Boost"
+                description="Improve your search rankings with diverse, quality backlinks from trusted sources."
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Pricing */}
+        <div className="py-20 bg-gray-800/50" id="pricing">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-center mb-12">Simple, Transparent Pricing</h2>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <PricingCard
+                title="Starter Pack"
+                price={79}
+                features={[
+                  "50 Directory Listings",
+                  "Manual Submission",
+                  "Real-time Submission Report",
+                  "14-Day Delivery",
+                  "Email Support"
+                ]}
+              />
+              <PricingCard
+                title="Pro Pack"
+                price={99}
+                originalPrice={159}
+                features={[
+                  "100 Directory Listings",
+                  "Priority Manual Submission",
+                  "Real-time Submission Report",
+                  "7-Day Delivery",
+                  "Priority Support"
+                ]}
+                isPopular
+                spotsLeft={3}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Social Proof */}
+        <div className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400 inline-block" />
+              ))}
+            </div>
+            <p className="mt-4">
+              "ListMySite.io helped us increase our domain authority by 15 points in just two months. Their manual submission process ensured quality backlinks that made a real difference."
+            </p>
+            <p className="mt-2">
+              - Alex Chen, Founder @ TechStartup.com
+            </p>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t border-gray-800 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <Zap className="w-6 h-6 text-yellow-400" />
+              <span className="font-semibold">listmysite.io</span>
+            </div>
+            <div className="text-sm text-gray-400">
+              © 2024 ListMySite.io. All rights reserved.
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
